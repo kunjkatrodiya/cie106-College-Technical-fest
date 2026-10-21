@@ -11,7 +11,7 @@ This application allows students to register for technical fest events, view reg
 **Project Name:** AMTICS Technical Fest Registration System  
 **Framework:** ASP.NET Core MVC  
 **Language:** C#  
-**Frontend:** HTML, CSS, Bootstrap, Razor  
+**Frontend:** HTML, CSS, Bootstrap & Razor  
 **IDE:** Visual Studio Code  
 **.NET Version:** .NET 8  
 **Storage:** Temporary In-Memory List  
