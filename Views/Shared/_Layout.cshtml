@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - AMTICS Technical Fest
+    </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <!-- Project CSS -->
+    <link rel="stylesheet"
+          href="~/cie478.styles.css"
+          asp-append-version="true" />
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION BAR
+         ========================================= -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+
+            <div class="container-fluid px-4">
+
+                <!-- Logo / Brand -->
+
+                <a class="navbar-brand"
+                   asp-controller="Fest"
+                   asp-action="Welcome">
+
+                    🎓 AMTICS TECH FEST
+
+                </a>
+
+
+                <!-- Mobile Menu Button -->
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- Navigation Links -->
+
+                <div class="collapse navbar-collapse"
+                     id="mainNavbar">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+                        <!-- Home -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Fest"
+                               asp-action="Welcome">
+
+                                🏠 Home
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Participants -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Fest"
+                               asp-action="Index">
+
+                                👥 Participants
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Register -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Fest"
+                               asp-action="Register">
+
+                                📝 Register
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Register Button -->
+
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+
+                            <a class="btn btn-success"
+                               asp-controller="Fest"
+                               asp-action="Register">
+
+                                🚀 Register Now
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main role="main">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="mt-5 py-4">
+
+        <div class="container text-center">
+
+            <div class="mb-2">
+
+                <strong>
+                    🎓 AMTICS TECHNICAL FEST
+                </strong>
+
+            </div>
+
+            <div>
+
+                Explore • Compete • Innovate • Achieve
+
+            </div>
+
+            <div class="mt-2">
+
+                © 2026 AMTICS Technical Fest
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+
+    <!-- Page-specific scripts -->
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false
+    )
+
+</body>
+
+</html>

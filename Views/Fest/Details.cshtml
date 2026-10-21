@@ -1,0 +1,192 @@
+@model Participant
+
+@{
+    ViewData["Title"] = "Participant Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3>
+                Participant Details
+            </h3>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <h4 class="mb-3">
+
+                Welcome, @Model.ParticipantName!
+
+            </h4>
+
+
+            <div class="alert alert-info">
+
+                You are registered for
+                <strong>
+                    @Model.EventName
+                </strong>.
+
+            </div>
+
+
+            <table class="table table-bordered">
+
+                <tr>
+
+                    <th>Participant ID</th>
+
+                    <td>
+                        @Model.ParticipantId
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Participant Name</th>
+
+                    <td>
+                        @Model.ParticipantName
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Email</th>
+
+                    <td>
+                        @Model.Email
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Department</th>
+
+                    <td>
+                        @Model.Department
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Year</th>
+
+                    <td>
+                        @Model.Year
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Event</th>
+
+                    <td>
+                        @Model.EventName
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Team Event</th>
+
+                    <td>
+
+                        @(Model.IsTeamEvent ? "Yes" : "No")
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Registration Fee</th>
+
+                    <td>
+
+                        ₹@(Model.RegistrationFee ?? 0)
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Fee Category</th>
+
+                    <td>
+
+                        @Model.GetFeeCategory()
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>Registration Status</th>
+
+                    <td>
+
+                        @Model.GetRegistrationStatus()
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+            <!-- Conditional Alert -->
+
+            @if (Model.GetRegistrationStatus() == "Confirmed")
+            {
+                <div class="alert alert-success">
+
+                    Registration Confirmed successfully!
+
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+
+                    Registration is currently Pending.
+
+                </div>
+            }
+
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+
+                Back to Participants
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

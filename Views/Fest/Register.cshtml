@@ -1,0 +1,138 @@
+@model Participant
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">
+        Technical Fest Registration
+    </h2>
+
+    <div class="card shadow p-4">
+
+        <form asp-action="Register" asp-controller="Fest" method="post">
+
+            <div class="mb-3">
+                <label asp-for="ParticipantName" class="form-label">
+                    Participant Name
+                </label>
+
+                <input asp-for="ParticipantName"
+                       class="form-control"
+                       placeholder="Enter your name" />
+
+                <span asp-validation-for="ParticipantName"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">
+                    Email
+                </label>
+
+                <input asp-for="Email"
+                       type="email"
+                       class="form-control"
+                       placeholder="Enter your email" />
+
+                <span asp-validation-for="Email"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Department" class="form-label">
+                    Department
+                </label>
+
+                <select asp-for="Department" class="form-select">
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="CE">Computer Engineering</option>
+                    <option value="Mechanical">Mechanical</option>
+                </select>
+
+                <span asp-validation-for="Department"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Year" class="form-label">
+                    Year
+                </label>
+
+                <select asp-for="Year" class="form-select">
+                    <option value="">Select Year</option>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                    <option value="4">Fourth Year</option>
+                </select>
+
+                <span asp-validation-for="Year"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="EventName" class="form-label">
+                    Event Name
+                </label>
+
+                <select asp-for="EventName" class="form-select">
+                    <option value="">Select Event</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Code Clash">Code Clash</option>
+                    <option value="Robo Race">Robo Race</option>
+                    <option value="Web Design">Web Design</option>
+                </select>
+
+                <span asp-validation-for="EventName"
+                      class="text-danger"></span>
+            </div>
+
+
+            
+
+            <div class="form-check mb-3">
+
+                <input asp-for="IsTeamEvent"
+                       class="form-check-input" />
+
+                <label asp-for="IsTeamEvent"
+                       class="form-check-label">
+
+                    This is a Team Event
+
+                </label>
+
+            </div>
+
+
+            <button type="submit"
+                    class="btn btn-primary">
+
+                Register
+
+            </button>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
