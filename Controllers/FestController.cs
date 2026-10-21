@@ -5,6 +5,7 @@ namespace cie478.Controllers;
 public class FestController : Controller
 {
     // Temporary collection for storing participants
+    
     private static readonly List<Participant> participants = new();
 
     // Display all registered participants
